@@ -508,13 +508,14 @@ dependencies = [
 name = "auth"
 version = "0.1.0"
 dependencies = [
+ "async-std",
  "async-trait",
  "chrono",
  "context",
+ "entity",
  "error",
  "serde",
  "serde_json",
- "store",
  "util",
  "validr",
 ]
@@ -926,8 +927,10 @@ name = "context"
 version = "0.1.0"
 dependencies = [
  "config",
+ "env_logger",
  "error",
  "log",
+ "migration",
  "sea-orm",
 ]
 
@@ -1163,6 +1166,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "entity"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "sea-orm",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "env_logger"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1202,6 +1215,7 @@ version = "0.1.0"
 dependencies = [
  "sea-orm",
  "thiserror",
+ "validr",
 ]
 
 [[package]]
@@ -3018,16 +3032,6 @@ dependencies = [
  "once_cell",
  "tokio",
  "tokio-rustls",
-]
-
-[[package]]
-name = "store"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "sea-orm",
- "serde",
- "serde_json",
 ]
 
 [[package]]
