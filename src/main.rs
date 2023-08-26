@@ -1,5 +1,6 @@
 use config::Config;
 use context::Context;
+use migration::{Migrator, MigratorTrait};
 use std::sync::Arc;
 
 #[actix_web::main]
@@ -12,13 +13,18 @@ async fn main() {
         std::process::exit(1);
     }));
 
+    // Initialize the configuration of the app
     let config = Config::new(
         "My app",
         env!("CARGO_PKG_VERSION"),
-        "This is a first try at a drive app",
+        "This is a first try at a nodrive app",
     );
 
     env_logger::init();
 
-    let _context = Arc::new(Context::new(config).await.unwrap());
+    // Create context from the config
+    let context = Arc::new(Context::new(config).await.unwrap());
+
+    // Run database migrations
+    Migrator::up(&context.db, None).await.unwrap();
 }
