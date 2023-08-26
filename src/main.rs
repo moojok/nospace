@@ -17,7 +17,7 @@ async fn main() {
     let config = Config::new(
         "My app",
         env!("CARGO_PKG_VERSION"),
-        "This is a first try at a nodrive app",
+        "This is a first try at a nospace app",
     );
 
     env_logger::init();
