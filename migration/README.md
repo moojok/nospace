@@ -1,41 +1,41 @@
 # Running Migrator CLI
 
 - Generate a new migration file
-  ```sh
+  ```bash
   cargo run -- migrate generate MIGRATION_NAME
   ```
 - Apply all pending migrations
-  ```sh
+  ```bash
   cargo run
   ```
-  ```sh
+  ```bash
   cargo run -- up
   ```
 - Apply first 10 pending migrations
-  ```sh
+  ```bash
   cargo run -- up -n 10
   ```
 - Rollback last applied migrations
-  ```sh
+  ```bash
   cargo run -- down
   ```
 - Rollback last 10 applied migrations
-  ```sh
+  ```bash
   cargo run -- down -n 10
   ```
 - Drop all tables from the database, then reapply all migrations
-  ```sh
+  ```bash
   cargo run -- fresh
   ```
 - Rollback all applied migrations, then reapply all migrations
-  ```sh
+  ```bash
   cargo run -- refresh
   ```
 - Rollback all applied migrations
-  ```sh
+  ```bash
   cargo run -- reset
   ```
 - Check the status of all migrations
-  ```sh
+  ```bash
   cargo run -- status
   ```

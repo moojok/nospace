@@ -1,5 +1,11 @@
+# Global
+**/.DS_Store
+**/*.pem
+**/.env*.local
+**/.env
+**/sqlite.db
+
+# Rusty
 /target
-.env
-sqlite.db
 /data/*
 !/data/.gitkeep
