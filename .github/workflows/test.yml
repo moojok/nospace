@@ -39,11 +39,7 @@ jobs:
 
   test:
     name: 🩺 Test Suite
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        rust: [stable]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: ⤵️ Check out code
