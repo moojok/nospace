@@ -1,0 +1,9 @@
+{
+  "search.exclude": {
+    "**/node_modules": false,
+    "**/*.lock": true,
+    "**/.yarn/": true,
+    "**/.turbo/": true,
+    "**/target": true
+  }
+}
