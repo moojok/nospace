@@ -31,7 +31,9 @@ lint:
     - linters: [ALL]
       paths:
         # Yarn files
-        - clients/web/.yarn/**
+        - .yarn/**
+        # Others
+        - trunk
 actions:
   disabled:
     - trunk-announce

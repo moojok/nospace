@@ -1,0 +1,22 @@
+{
+  "name": "nospace",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Little Human <hey@moojok.online>",
+  "workspaces": [
+    "clients/*"
+  ],
+  "scripts": {
+    "build": "turbo run build --filter=@nospace/web",
+    "dev": "turbo run dev --filter=@nospace/web",
+    "lint": "turbo run lint --parallel",
+    "test": "turbo run test --parallel",
+    "fmt": "./trunk fmt -a",
+    "fix": "manypkg fix"
+  },
+  "dependencies": {
+    "@manypkg/cli": "^0.21.0",
+    "turbo": "^1.10.13"
+  },
+  "packageManager": "yarn@4.0.0-rc.50"
+}
