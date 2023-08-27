@@ -958,6 +958,7 @@ dependencies = [
 name = "context"
 version = "0.1.0"
 dependencies = [
+ "actix-web",
  "config",
  "env_logger",
  "error",
@@ -2027,12 +2028,18 @@ name = "nospace"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "auth",
  "config",
  "context",
+ "cryptfns",
+ "entity",
  "env_logger",
  "error",
+ "lazy_static",
  "log",
  "migration",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
