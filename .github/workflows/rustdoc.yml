@@ -1,0 +1,46 @@
+---
+name: ♿️ You Need Guide
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  RUSTFLAGS: -D warnings -W unreachable-pub
+  RUSTUP_MAX_RETRIES: 10
+
+jobs:
+  rustdoc:
+    name: 🌐 Initialized
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⤵️ Check out code
+        uses: actions/checkout@v3
+
+      - name: 📦️ Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: 📦️ Setup rust cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: 🚚 Build documentation
+        uses: actions-rs/cargo@v1
+        with:
+          command: doc
+          args: --workspace --no-deps
+
+      - name: 🚀 Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./target/doc
+          force_orphan: true
