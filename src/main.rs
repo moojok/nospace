@@ -1,6 +1,5 @@
-use config::Config;
-use context::Context;
 use migration::{Migrator, MigratorTrait};
+use nospace::{Config, Context};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
