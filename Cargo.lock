@@ -511,7 +511,6 @@ dependencies = [
  "actix-web",
  "async-std",
  "async-trait",
- "base64 0.21.2",
  "chrono",
  "context",
  "cryptfns",
@@ -1054,6 +1053,8 @@ dependencies = [
  "error",
  "rand 0.7.3",
  "secp256k1",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -2036,7 +2037,6 @@ version = "0.1.0"
 dependencies = [
  "actix-web",
  "auth",
- "base64 0.21.2",
  "chrono",
  "config",
  "context",
