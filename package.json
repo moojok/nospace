@@ -11,7 +11,8 @@
     "dev": "turbo run dev --filter=@nospace/web",
     "lint": "turbo run lint --parallel",
     "test": "turbo run test --parallel",
-    "fmt": "./trunk fmt -a",
+    "format:client": "turbo run format --filter=@nospace/web",
+    "format:core": "./trunk.sh fmt -a",
     "fix": "manypkg fix"
   },
   "dependencies": {

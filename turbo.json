@@ -16,6 +16,9 @@
     },
     "lint": {
       "cache": false
+    },
+    "format": {
+      "cache": false
     }
   }
 }
