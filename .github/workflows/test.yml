@@ -1,0 +1,28 @@
+name: Test-Rust
+
+on:
+  # Trigger the workflow on every branch
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install pkg-config
+        run: sudo apt install -y clang llvm pkg-config nettle-dev
+
+      - name: Run tests
+        run: ./test
