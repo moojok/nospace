@@ -68,13 +68,12 @@ impl Context {
 
     #[cfg(feature = "mock")]
     pub async fn mock_sqlite() -> Context {
-        use log::debug;
         use migration::MigratorTrait;
 
         let config = Config::mock();
 
         if let Ok(_) = env_logger::try_init() {
-            debug!("Log has been initialized");
+            log::debug!("Log has been initialized");
         }
 
         let db = Database::connect("sqlite::memory:?mode=rwc").await.unwrap();
