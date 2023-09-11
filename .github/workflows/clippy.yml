@@ -29,6 +29,9 @@ jobs:
           components: clippy
           override: true
 
+      - name: Install pkg-config
+        run: sudo apt install -y clang llvm pkg-config nettle-dev
+
       - name: Install required cargo
         run: cargo install clippy-sarif sarif-fmt
 
