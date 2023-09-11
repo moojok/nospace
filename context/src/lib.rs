@@ -68,6 +68,7 @@ impl Context {
 
     #[cfg(feature = "mock")]
     pub async fn mock_sqlite() -> Context {
+        use log::debug;
         use migration::MigratorTrait;
 
         let config = Config::mock();

@@ -1,3 +1,0 @@
-gha_enabled: True
-branch: main
-description: Say hello to "NoSpace" - your own pocket-sized, ridiculously secure, and self-hosted cloud storage solution, whipped up in the secret sauce of Rust. Picture your data in an armored truck, that's our end-to-end encryption for you - no snoopy neighbors or sneaky hackers invited.

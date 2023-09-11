@@ -19,5 +19,5 @@
     "@manypkg/cli": "^0.21.0",
     "turbo": "^1.10.13"
   },
-  "packageManager": "yarn@4.0.0-rc.50"
+  "packageManager": "yarn@3.6.3"
 }
