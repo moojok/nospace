@@ -27,7 +27,7 @@ lint:
     - rustfmt@1.65.0
     - taplo@0.8.1
     - trivy@0.45.0
-    - trufflehog@3.54.3
+    - trufflehog@3.54.4
     - yamllint@1.32.0
   ignore:
     - linters: [ALL]
