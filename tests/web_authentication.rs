@@ -21,7 +21,7 @@ async fn test_registration_and_login() {
     let mut app = test::init_service(server::app(context.clone())).await;
     let req = test::TestRequest::post()
         .uri("/api/auth/register")
-        .set_json(&CreateUser {
+        .set_json(CreateUser {
             email: Some("john@doe.com".to_string()),
             password: Some("not-4-weak-password-for-god-sakes!".to_string()),
             secret: None,
@@ -38,7 +38,7 @@ async fn test_registration_and_login() {
 
     let req = test::TestRequest::post()
         .uri("/api/auth/login")
-        .set_json(&Credentials {
+        .set_json(Credentials {
             email: Some("john@doe.com".to_string()),
             password: Some("not-4-weak-password-for-god-sakes!".to_string()),
             remember: Some(true),
@@ -54,7 +54,7 @@ async fn test_registration_and_login() {
         serde_json::from_slice(&test::read_body(resp).await).unwrap();
 
     let cookie = auth
-        .manage_cookie(&authenticated.session.as_ref().unwrap(), false)
+        .manage_cookie(authenticated.session.as_ref().unwrap(), false)
         .await
         .unwrap();
 

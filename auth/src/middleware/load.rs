@@ -173,7 +173,7 @@ where
         if self.ignore.contains(&route) {
             let fut = self.service.call(req);
 
-            return Box::pin(async move { fut.await });
+            return Box::pin(fut);
         }
 
         let svc = self.service.clone();
