@@ -2,10 +2,10 @@
 
 set -e
 
+bun install
+
 cd clients/web
 
-yarn install
+bun run test:unit
 
-yarn test:unit
-
-yarn test:api
+bun run test:api
